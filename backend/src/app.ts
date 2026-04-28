@@ -23,14 +23,7 @@ const allowedCors = [
 ];
 
 const corsOptions = {
-  origin: (origin, callback) => {
-    if (!origin || allowedCors.includes(origin)) {
-      callback(null, true);
-      return;
-    }
-
-    callback(new Error('CORS policy violation'));
-  },
+  origin: allowedCors,
   credentials: true,
 };
 
