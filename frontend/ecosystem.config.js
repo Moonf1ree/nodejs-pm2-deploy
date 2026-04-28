@@ -62,7 +62,7 @@ module.exports = {
       repo: DEPLOY_REPOSITORY,
       path: DEPLOY_PATH,
       key: SSH_KEY_PATH,
-      'post-deploy': 'cd frontend && npm ci && REACT_APP_API_URL="${REACT_APP_API_URL}" npm run build && pm2 startOrRestart ecosystem.config.js --env production --only mesto-frontend',
+      'post-deploy': `cd frontend && npm ci && REACT_APP_API_URL="${REACT_APP_API_URL}" npm run build && pm2 startOrRestart ecosystem.config.js --env production --only mesto-frontend`,
     },
   },
 };
