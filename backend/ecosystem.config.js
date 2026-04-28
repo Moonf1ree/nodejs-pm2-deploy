@@ -61,7 +61,7 @@ module.exports = {
       repo: DEPLOY_REPOSITORY,
       path: DEPLOY_PATH,
       key: SSH_KEY_PATH,
-      'pre-deploy-local': 'bash ./scripts/deployEnv.sh "${DEPLOY_USER}@${DEPLOY_HOST}" "${DEPLOY_PATH}"',
+      'pre-deploy-local': `bash ./scripts/deployEnv.sh "${DEPLOY_USER}@${DEPLOY_HOST}" "${DEPLOY_PATH}"`,
       'post-deploy': 'npm ci && npm run build && cp ../../shared/.env .env && pm2 startOrRestart ecosystem.config.js --env production --only mesto-backend',
     },
   },
